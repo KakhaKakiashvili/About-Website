@@ -1,0 +1,255 @@
+/* HEADER */
+.header {
+    width: 100%;
+    height: 80px;
+}
+
+.header-inner {
+    padding: 15px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title h1 {
+    font-size: 22px;
+}
+
+
+.circle {
+    width: 25px;
+    height: 25px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+}
+ 
+.header-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-nav a:hover {
+    color: rgb(105, 105, 105);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.line {
+    height: 20px;
+    width: 2px;
+    background-color: black;
+}
+
+/* BURGER-MENU */
+
+/* input */
+.b-menu::before,
+.b-menu::after,
+.b-menu input {
+    content: '';
+    width: 60px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 9999px;
+    transform-origin: left center ;
+    transition: 
+    opacity 200ms ease-in-out, 
+    width 200ms ease-in-out, 
+    rotate 200ms ease-in-out,
+    translate 200ms ease-in-out,
+    background-color 200ms ease-in-out;
+}
+
+.b-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+
+.b-menu {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    width: max-content;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+}
+
+.b-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+
+.b-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: calc((8px*3 + 6px*2) * 1.41421356237);
+    translate: 0 calc(8px / -2);
+    background-color: rgba(199, 38, 38, 0.877);
+}
+.b-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: calc((8px*3 + 6px*2) * 1.41421356237);
+    translate: 0 calc(8px / 2);
+    background-color: rgba(199, 38, 38, 0.877);
+}
+/* sidebar */
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    padding: 1rem 1.5rem;
+    padding-top: 65px;
+    background-color: rgb(255, 166, 0);
+    border: 0.2px solid rgba(0, 0, 0, 0.253);
+    border-bottom-left-radius: 5px;
+    color: white;
+    width: 10rem;
+    height: 100vh;
+    text-align: center;
+    transition: 200ms ease-in-out;
+}
+.b-menu:has(input:checked) + .sidebar {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 200ms ease-in;
+}
+
+
+
+.sidebar nav div {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar nav a:hover {
+    color: #333;
+    transition: 200ms;
+}
+
+/* FOOTER */
+
+.footer {
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer h2 {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.footer p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.phone-email {
+    display: flex;
+    gap: 25px;
+}
+
+.socials-info {
+    display: inline;
+    text-align: center;
+}
+
+.instagram, .facebook {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+}
+
+
+/* MEDIA */
+
+@media (max-width: 750px) {
+    /* BURGER */
+    .header-nav {
+        display: none;
+    }
+    .b-menu {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    /* FOOTER */
+    .footer h2 {
+        font-size: 16px;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .blines {
+        width: 40px;
+    }
+
+    .title {
+        gap: 10px;
+    }
+    
+    .title h1 {
+        font-size: 16px;
+    }
+    .title p {
+        font-size: 13px;
+    }
+
+    .circle {
+        width: 15px;
+        height: 15px;
+    }
+    /* Footer */
+
+    .footer-hr {
+        margin-top: 50px;
+    }
+    .phone-email {
+        display: inline;
+    }
+    .footer h2 {
+        font-size: 14px;
+    }
+    .footer p {
+        font-size: 10px;
+    }
+}
+
+

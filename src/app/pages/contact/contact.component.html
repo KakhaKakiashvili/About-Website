@@ -1,0 +1,46 @@
+<body>
+    <div class="container">
+
+        <div class="contact">
+            <div class="info">
+                <div class="text">
+                    <h1>Contact</h1>
+                    <p>Looking forward to hearing from you</p>
+                </div>
+                <div class="phone">
+                    <h2>Phone</h2>
+                    <p>123-456-7890</p>
+                </div>
+                <div class="email">
+                    <h2>Email</h2>
+                    <p>kakiashvilikaxa123.yahoo.com</p>
+                </div>
+            </div>
+            <div class="form">
+                <form [formGroup]="contactForm" (ngSubmit)="submitMessage()">
+                    <div class="first-name">
+                        <p>First name *</p>
+                        <input type="text" formControlName="firstName" [ngClass]="{'invalid': isInvalid('firstName')}">
+                    </div>
+                    <div class="last-name">
+                        <p>Last name *</p>
+                        <input type="text" formControlName="lastName" [ngClass]="{'invalid': isInvalid('lastName')}">
+                    </div>
+                    <div class="email">
+                        <p>Email *</p>
+                        <input type="email" formControlName="email" [ngClass]="{'invalid': isInvalid('email')}">
+                    </div>
+                    <div class="subject">
+                        <p>Subject</p>
+                        <input type="text" formControlName="subject" [ngClass]="{'invalid': isInvalid('subject')}">
+                    </div>
+                    <div class="message">
+                        <p>Message</p>
+                        <textarea formControlName="message" [ngClass]="{'invalid': isInvalid('message')}"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

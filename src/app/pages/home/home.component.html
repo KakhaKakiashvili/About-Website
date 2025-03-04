@@ -1,0 +1,37 @@
+<body [ngStyle]="{'background-color': bgColor}">
+    <div class="container">
+        <div class="body-inner">
+            <div class="body-div">
+                <img src="./images/avatar.png" alt="">
+                <div class="texts-buttons">
+                    <div class="body-text">
+                        <h1>Hello</h1>
+                        <h3>A bit about me</h3>
+                        <p>I'm Kakha Kakiashvili, Junior Front-end developer , i just began so im trying to improve my
+                            skills and become better day by day.</p>
+                    </div>
+                    <div class="body-buttons">
+                        <a routerLink="resume">
+                            <button class="resume button" (mouseenter)="setHoverColor('orange')"
+                                (mouseleave)="resetColor()">
+                                Resume
+                            </button>
+                        </a>
+                        <a routerLink="projects">
+                            <button class="projects button" (mouseenter)="setHoverColor('rgb(255, 51, 0)')"
+                                (mouseleave)="resetColor()">
+                                Projects
+                            </button>
+                        </a>
+                        <a routerLink="contact">
+                            <button class="contact button" (mouseenter)="setHoverColor('rgb(105, 170, 255)')"
+                                (mouseleave)="resetColor()">
+                                Contact
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

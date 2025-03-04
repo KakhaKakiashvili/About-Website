@@ -1,0 +1,61 @@
+
+
+h1 {
+    font-size: 42px;
+    margin: 100px 0 30px 80px;
+}
+
+.experience,.education,.skills-expertise {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px 20px 80px;
+    margin: 100px 0 100px 0;
+    gap: 20px;
+}
+
+.texts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.texts p {
+    margin-bottom: 50px;
+}
+
+.date-texts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+li {
+    margin-bottom: 20px;
+    max-width: 400px;
+    list-style-position: outside;
+
+}
+
+/* MEDIA */
+
+@media (max-width:700px) {
+    .experience,.education,.skills-expertise {
+        display: block;
+        text-align: center;
+    }
+
+    .date-texts {
+        display: block;
+        margin-top: 40px;
+    }
+
+    .texts {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .texts p {
+        margin-top: 10px;
+    }
+}
